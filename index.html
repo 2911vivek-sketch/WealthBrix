@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- React Icons alternative: Font Awesome -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -20,17 +20,16 @@
                 <img src="images/download.png" alt="Wealthbrix Logo">
             </a>
 
-            <!-- Hamburger Menu -->
+            <!-- Hamburger -->
             <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
 
             <nav class="nav-menu" id="nav-menu">
                 <ul class="nav">
                     <li class="active"><a href="#home">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#docs">Documents</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#videos">Videos</a></li>
                 </ul>
@@ -38,7 +37,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="home">
         <div class="hero-overlay">
             <div class="container">
@@ -49,7 +48,7 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section class="projects" id="projects">
         <div class="container">
             <h2>Our Projects</h2>
@@ -78,15 +77,22 @@
             </div>
         </div>
     </section>
+
+    <!-- Documents -->
     <section class="docs-section" id="docs">
         <div class="docs-container">
             <h2>Property Details</h2>
 
-            <!-- PDF Download -->
+            <!-- PDF Downloads -->
             <div class="pdf-box">
-                <p>Download the complete brochure for property details:</p>
                 <a href="images/Himalays-GreenValley-Lansdowne-N.pdf" download class="pdf-btn">
-                    📄 Download PDF
+                    📄 Himalays GreenValley - Brochure
+                </a>
+                <a href="images/Kabana High - Ebrochure.pdf" download class="pdf-btn">
+                    📄 Kabana High - Ebrochure
+                </a>
+                <a href="images/KH Retail - Price List.pdf" download class="pdf-btn">
+                    📄 KH Retail - Price List
                 </a>
             </div>
 
@@ -98,13 +104,13 @@
         </div>
 
         <!-- Lightbox -->
-        <div class="lightbox" id="lightbox" style="display: none;">
+        <div class="lightbox" id="lightbox">
             <button class="lightbox-close" id="lightbox-close">✖</button>
             <img src="" alt="Preview" class="lightbox-img" id="lightbox-img">
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Us</h2>
@@ -146,22 +152,19 @@
         </div>
     </section>
 
-    <!-- Videos Section -->
+    <!-- Videos -->
     <section id="videos" class="videos-section">
         <div class="container">
             <h2>Property Videos</h2>
             <div class="videos-grid">
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/bHjdvrw1OPk" title="Video 1" allowfullscreen
-                        loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/bHjdvrw1OPk" allowfullscreen></iframe>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/9W27TmlgxiQ" title="Video 2" allowfullscreen
-                        loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/9W27TmlgxiQ" allowfullscreen></iframe>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/lxEvDq00Pqw" title="Video 3" allowfullscreen
-                        loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/lxEvDq00Pqw" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -173,35 +176,33 @@
             <p>© 2025 Wealthbrix Real Estate. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Scripts -->
     <script>
         const gallery = document.getElementById('gallery');
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxClose = document.getElementById('lightbox-close');
 
-        // Open Lightbox on click
-        gallery.addEventListener('click', (e) => {
+        gallery.addEventListener('click', e => {
             if (e.target.tagName === 'IMG') {
                 lightbox.style.display = 'flex';
                 lightboxImg.src = e.target.src;
             }
         });
 
-        // Close Lightbox
         lightboxClose.addEventListener('click', () => {
             lightbox.style.display = 'none';
             lightboxImg.src = '';
         });
 
-        // Close lightbox on click outside image
-        lightbox.addEventListener('click', (e) => {
+        lightbox.addEventListener('click', e => {
             if (e.target === lightbox) {
                 lightbox.style.display = 'none';
                 lightboxImg.src = '';
             }
         });
-    </script>
-    <script>
+
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
 
