@@ -7,43 +7,50 @@
     <title>Wealthbrix</title>
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- React Icons alternative: Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Navbar -->
     <header class="header">
-        <div class="container header-content">
+        <div class="navbar-container">
             <a href="#" class="logo">
                 <img src="images/download.png" alt="Wealthbrix Logo">
             </a>
-            <nav>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav-menu" id="nav-menu">
                 <ul class="nav">
+                    <li class="active"><a href="#home">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#videos">Videos</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-overlay">
             <div class="container">
-                <h2>Building Futures Brick By Brick </h2>
+                <h2>Building Futures Brick By Brick</h2>
                 <p>Exclusive projects designed for luxury living & smart investments.</p>
                 <a href="#projects" class="btn">Explore Projects</a>
             </div>
         </div>
     </section>
 
-
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section class="projects" id="projects">
         <div class="container">
             <h2>Our Projects</h2>
             <div class="project-grid">
@@ -71,44 +78,90 @@
             </div>
         </div>
     </section>
+    <section class="docs-section" id="docs">
+        <div class="docs-container">
+            <h2>Property Details</h2>
 
-    <!-- About Us Section -->
-    <!-- About Us Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Wealthbrix</h2>
-            <p>
-                At <strong>Wealthbrix</strong>, we go beyond building spaces —
-                we create destinations that inspire lifestyles and deliver
-                long-term value. With a focus on <em>luxury, sustainability, and trust</em>,
-                our portfolio includes iconic commercial landmarks and serene
-                residential communities.
-                <br><br>
-                Guided by innovation and customer-first values,
-                we are redefining real estate excellence and shaping
-                tomorrow’s landmarks today.
-            </p>
+            <!-- PDF Download -->
+            <div class="pdf-box">
+                <p>Download the complete brochure for property details:</p>
+                <a href="images/Himalays-GreenValley-Lansdowne-N.pdf" download class="pdf-btn">
+                    📄 Download PDF
+                </a>
+            </div>
+
+            <!-- Image Gallery -->
+            <div class="gallery" id="gallery">
+                <img src="images/60Lakhgv.jpg" alt="Property 1">
+                <img src="images/greenVallyRate.jpg" alt="Property 2">
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" style="display: none;">
+            <button class="lightbox-close" id="lightbox-close">✖</button>
+            <img src="" alt="Preview" class="lightbox-img" id="lightbox-img">
         </div>
     </section>
-
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Us</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Nxone, Tower 2 A002, Near Gaur Chowk</p>
+            <div class="contact-wrapper">
+                <!-- Info Card -->
+                <div class="contact-card">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Nxone, Tower 2 A002, Near Gaur Chowk</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@wealthbrix.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 9220930065 | +91 9971900065</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>contact@wealthbrix.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <p>+91 9220930065 || +91 9971900065</p>
 
+                <!-- Map -->
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.459044594875!2d77.43338457503195!3d28.586002586192926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef0011446acd%3A0xdf3a122aa57fd16f!2sNX-ONE%2C%20Tower%202!5e0!3m2!1sen!2sin!4v1758560494004!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0; border-radius:10px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Wealthbrix Location"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos-section">
+        <div class="container">
+            <h2>Property Videos</h2>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/bHjdvrw1OPk" title="Video 1" allowfullscreen
+                        loading="lazy"></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/9W27TmlgxiQ" title="Video 2" allowfullscreen
+                        loading="lazy"></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/lxEvDq00Pqw" title="Video 3" allowfullscreen
+                        loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -120,6 +173,43 @@
             <p>© 2025 Wealthbrix Real Estate. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        const gallery = document.getElementById('gallery');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        // Open Lightbox on click
+        gallery.addEventListener('click', (e) => {
+            if (e.target.tagName === 'IMG') {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = e.target.src;
+            }
+        });
+
+        // Close Lightbox
+        lightboxClose.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+            lightboxImg.src = '';
+        });
+
+        // Close lightbox on click outside image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+                lightboxImg.src = '';
+            }
+        });
+    </script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
