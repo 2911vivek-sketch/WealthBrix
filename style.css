@@ -390,18 +390,34 @@ a {
   }
 }
 
+
 /* Mobile */
 @media (max-width: 768px) {
   .nav {
     display: none;
-    /* 👈 पहले से hidden */
+    /* 👈 by default hide */
     flex-direction: column;
     gap: 20px;
     padding: 20px;
   }
 
+  /* जब menu active हो तभी show */
   .nav-menu.active .nav {
     display: flex;
-    /* 👈 सिर्फ़ जब .active हो */
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #000;
+    width: 220px;
+    height: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
   }
 }
